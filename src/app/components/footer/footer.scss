@@ -1,0 +1,28 @@
+footer {
+    background-color: transparent;
+    color: white;
+    height: 100px;
+    padding: 0px 140px;
+    border-top: 2px solid var(--purple-bg-color);
+
+    .footer-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        .year-creator {
+            font-size: medium;
+            font-weight: 500;
+        }
+
+        .poweredBy {
+            font-size: medium;
+            font-weight: 400;
+        }
+
+        span {
+            color: var(--brand-color-orange);
+        }
+    }
+}

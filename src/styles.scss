@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --brand-color-purple: #8958ff;
+  --brand-color-paper: #ffe3bd;
+  --brand-color-orange: #ff8730;
+  --brand-color-orange-2: #FF964B;
+
+  --font-color-orange: #c2b3a3;
+  --dark-purple-bg: #16131B;
+  --purple-bg-color: #402A56;
+
+  --dark: #000014;
+
+  --white: #ffffff;
+
+  --spoky-font: "Creepster", sans-serif;
+  --jolly-lodger: "Jolly Lodger", sans-serif;
+  --roboto: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark);
+  color: white;
+}
