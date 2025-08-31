@@ -26,3 +26,23 @@ footer {
         }
     }
 }
+
+@media(max-width: 850px) {
+    footer {
+        padding: 0px 20px;
+
+        .footer-container {}
+    }
+}
+
+@media(max-width: 310px) {
+    footer {
+        padding: 36px 0px;
+        margin-bottom: 50px;
+
+        .footer-container {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+}

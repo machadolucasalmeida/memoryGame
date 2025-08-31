@@ -38,3 +38,19 @@ header {
         }
     }
 }
+
+@media(max-width: 576px) {
+    header {
+        .header-container {
+            h1 {
+                font-size: 40px;
+                width: 40%;
+                text-align: center;
+            }
+
+            svg {
+                width: 20%;
+            }
+        }
+    }
+}
