@@ -10,10 +10,15 @@ import { signal } from '@angular/core';
 export class MainScreen {
   selectedCard = signal<string | null>(null);
 
-  selectCard(difficulty: string) : void {
+  difficulty: string = "";
+  selectCard(difficulty: string): void {
     this.selectedCard.set(difficulty);
     console.log("Selected Difficulty: ", this.selectedCard());
+    this.difficulty = difficulty;
   }
 
-  
+  sendDifficulty() {
+    localStorage.setItem("difficulty", this.difficulty);
+    console.log("Difficulty successfully passed: ", this.difficulty);
+  }
 }
