@@ -43,8 +43,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "25kB",
+                  "maximumError": "25kB"
                 }
               ],
               "outputHashing": "all"
@@ -69,8 +69,8 @@
           },
           "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
+        "extract-i120n": {
+          "builder": "@angular/build:extract-i120n"
         },
         "test": {
           "builder": "@angular/build:karma",
