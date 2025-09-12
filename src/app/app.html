@@ -1,5 +1,10 @@
- <app-header></app-header>
-<app-main-screen></app-main-screen>
+<app-header></app-header>
+<main>
+    @if (gameStarted()) {
+    <app-game-screen [difficulty]="selectedDifficulty() ?? ''" (backToMain)="onBackToMain()">
+    </app-game-screen>
+    } @else {
+    <app-main-screen (startGame)="onStartGame($event)"></app-main-screen>
+    }
+</main>
 <app-footer></app-footer>
-
-<router-outlet />

@@ -2,7 +2,7 @@
     <div class="main-container">
         <h2>Match the Halloween creatures before they vanish into the night...</h2>
         <div class="card-options">
-            <div class="card" [class.selected-card]="selectedCard() === 'Easy'" (click)="selectCard('Easy')">
+            <div class="card" [class.selected-card]="selectedDifficulty() === 'Easy'" (click)="selectDifficulty('Easy')">
                 <svg viewBox="0 0 24 24" width="60px" height="60px" fill="none" xmlns="http://www.w3.org/2000/svg"
                     stroke="#000000">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -18,7 +18,7 @@
                 <p class="grid-setting">4x3 Grid</p>
                 <p class="description-level">Perfect for beginners</p>
             </div>
-            <div class="card" [class.selected-card]="selectedCard() === 'Medium'" (click)="selectCard('Medium')">
+            <div class="card" [class.selected-card]="selectedDifficulty() === 'Medium'" (click)="selectDifficulty('Medium')">
                 <svg version="1.1" width="60px" height="60px" id="_x32_" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"
                     fill="#000000">
@@ -50,7 +50,7 @@
                 <p class="grid-setting">4x4 Grid</p>
                 <p class="description-level">Test your memory</p>
             </div>
-            <div class="card" [class.selected-card]="selectedCard() === 'Hard'" (click)="selectCard('Hard')">
+            <div class="card" [class.selected-card]="selectedDifficulty() === 'Hard'" (click)="selectDifficulty('Hard')">
                 <svg viewBox="0 0 24 24" width="60px" height="60px" fill="none" xmlns="http://www.w3.org/2000/svg"
                     stroke="#000000">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -66,7 +66,7 @@
                 <p class="description-level">Only for the brave</p>
             </div>
         </div>
-        <button (click)="sendDifficulty()">👻 Start Haunting 👻</button>
+        <button (click)="onStart()">👻 Start Haunting 👻</button>
         <div class="rules-container">
             <h3>How to Play</h3>
             <ul>

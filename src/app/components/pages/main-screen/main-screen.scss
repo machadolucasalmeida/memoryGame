@@ -61,7 +61,8 @@ main {
                 }
             }
 
-            .card:hover, .card.selected-card {
+            .card:hover,
+            .card.selected-card {
                 box-shadow: 0px 0px 40px var(--brand-color-orange);
                 transform: translateY(-6px) scale(1.02);
                 border-color: var(--brand-color-orange);

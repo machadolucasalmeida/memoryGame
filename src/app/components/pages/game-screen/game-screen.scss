@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Roboto:wght@400;500;700&display=swap');
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 50px 0;
+    box-sizing: border-box;
+}
+
+.back-button {
+    font-family: var(--roboto);
+    padding: 16px 80px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, var(--brand-color-orange), var(--brand-color-orange-2));
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0px 0px 20px var(--brand-color-orange);
+        transform: translateY(-4px);
+    }
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 81.70%;
+    max-width: 900px;
+    gap: 30px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+
+    h2 {
+        font-family: var(--jolly-lodger);
+        font-size: 36px;
+        color: var(--font-color-orange);
+        letter-spacing: 2px;
+        text-align: center;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+
+}
+
+.card-grid-container {
+    display: grid;
+    width: 100%;
+    gap: 15px;
+    padding: 20px;
+    background: transparent;
+    border: 2px solid var(--purple-bg-color);
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    // Default grid for desktop/large screens
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card-flip-container {
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 12px;
+}
+
+.card-flip-container:hover .card-inner,
+.card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--roboto);
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: 2px solid var(--purple-bg-color);
+}
+
+.card-front {
+    background-color: transparent;
+    color: var(--font-color-orange);
+    transform: rotateY(0deg);
+}
+
+.card-back {
+    background-color: var(--brand-color-paper);
+    color: #1a1a1a;
+    transform: rotateY(180deg);
+}
+
+.card-inner.matched {
+    transform: rotateY(180deg);
+    opacity: 0.5;
+    cursor: default;
+}
+
+.game-over-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+
+    h2 {
+        font-family: var(--jolly-lodger);
+        font-size: 60px;
+        color: var(--brand-color-orange);
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        line-height: 1.1;
+    }
+}
+
+// Large tablets and small desktops
+@media (max-width: 1024px) {
+    .card-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+}
+
+// Tablets (landscape)
+@media (max-width: 768px) and (orientation: landscape) {
+    :host {
+        margin: 30px 0;
+        justify-content: center;
+    }
+
+    .game-container {
+        gap: 25px;
+    }
+
+    .header-container {
+        margin-bottom: 15px;
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .back-button {
+            padding: 12px 60px;
+            font-size: 16px;
+        }
+    }
+
+    .card-grid-container {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+        padding: 15px;
+    }
+
+    .card-front,
+    .card-back {
+        font-size: 24px;
+    }
+
+    .game-over-message h2 {
+        font-size: 42px;
+    }
+}
+
+// Tablets (portrait) and large phones
+@media (max-width: 768px) and (orientation: portrait) {
+    :host {
+        margin: 30px 0;
+    }
+
+    .game-container {
+        gap: 25px;
+    }
+
+    .header-container {
+        h2 {
+            font-size: 30px;
+        }
+
+        .back-button {
+            padding: 14px 70px;
+            font-size: 16px;
+        }
+    }
+
+    .card-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .card-front,
+    .card-back {
+        font-size: 28px;
+    }
+
+    .game-over-message h2 {
+        font-size: 48px;
+    }
+}
+
+// Standard phones (portrait)
+@media (max-width: 576px) {
+    :host {
+        margin: 30px 0;
+    }
+
+    .game-container {
+        width: 95%;
+        gap: 20px;
+    }
+
+    .header-container {
+        margin-bottom: 15px;
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .back-button {
+            padding: 12px 60px;
+            font-size: 16px;
+        }
+    }
+
+    .card-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .card-front,
+    .card-back {
+        font-size: 24px;
+    }
+
+    .game-over-message {
+        h2 {
+            font-size: 36px;
+        }
+    }
+}
+
+// Standard phones (landscape)
+@media (max-width: 812px) and (orientation: landscape) and (max-height: 450px) {
+    :host {
+        margin: 20px 0;
+        justify-content: flex-start;
+    }
+
+    .game-container {
+        gap: 15px;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    .header-container {
+        margin-bottom: 10px;
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .back-button {
+            padding: 10px 50px;
+            font-size: 14px;
+        }
+    }
+
+    .card-grid-container {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+        padding: 10px;
+    }
+
+    .card-front,
+    .card-back {
+        font-size: 18px;
+    }
+
+    .game-over-message {
+        h2 {
+            font-size: 28px;
+        }
+    }
+}
+
+// Tablet grid layouts (matching main-screen responsive behavior)
+@media (min-width: 577px) and (max-width: 729px) {
+    .card-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (min-width: 730px) and (max-width: 992px) {
+    .card-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+}
+
+// Small phones (portrait)
+@media (max-width: 400px) and (orientation: portrait) {
+    .game-container {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .header-container {
+        margin-bottom: 12px;
+
+        h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .back-button {
+            padding: 10px 40px;
+            font-size: 14px;
+        }
+    }
+
+    .card-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .card-front,
+    .card-back {
+        font-size: 20px;
+    }
+
+    .game-over-message {
+        h2 {
+            font-size: 28px;
+        }
+    }
+}
+
+// Very small phones (iPhone SE, etc.) - Ultra compact
+@media (max-width: 320px) {
+    :host {
+        margin: 10px 0;
+        padding: 5px;
+    }
+
+    .game-container {
+        width: 100%;
+        gap: 12px;
+        min-height: calc(100vh - 20px);
+    }
+
+    .header-container {
+        margin-bottom: 8px;
+
+        h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .back-button {
+            padding: 8px 20px;
+            font-size: 11px;
+            border-radius: 5px;
+        }
+    }
+
+    .card-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+        padding: 8px;
+        border-radius: 5px;
+    }
+
+    .card-front,
+    .card-back {
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+    .game-over-message {
+        padding: 10px;
+
+        h2 {
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+    }
+}
+
+// Additional mobile-specific optimizations
+@media (max-width: 576px) {
+
+    // Improve touch targets for mobile
+    .card-flip-container {
+        min-height: 60px;
+        min-width: 60px;
+    }
+
+    // Prevent zoom on double tap
+    .card-flip-container,
+    .back-button {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    // Optimize card flip animation for mobile performance
+    .card-inner {
+        transition: transform 0.6s ease-out;
+        will-change: transform;
+    }
+
+    // Ensure proper spacing on very tall screens
+    @media (min-height: 800px) {
+        :host {
+            justify-content: center;
+        }
+
+        .game-container {
+            min-height: auto;
+            max-height: 90vh;
+        }
+    }
+}
+
+// Orientation change handling
+@media (max-width: 576px) and (orientation: landscape) {
+    :host {
+        margin: 5px 0;
+    }
+
+    .game-container {
+        gap: 10px;
+        max-height: calc(100vh - 10px);
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 5px;
+
+        h2 {
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+    }
+
+    .card-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+    }
+}

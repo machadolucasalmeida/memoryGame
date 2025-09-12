@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-main-screen',
@@ -8,17 +7,20 @@ import { signal } from '@angular/core';
   styleUrl: './main-screen.scss'
 })
 export class MainScreen {
-  selectedCard = signal<string | null>(null);
+  selectedDifficulty = signal<string | null>(null);
+  @Output() startGame = new EventEmitter<string>();
 
-  difficulty: string = "";
-  selectCard(difficulty: string): void {
-    this.selectedCard.set(difficulty);
-    console.log("Selected Difficulty: ", this.selectedCard());
-    this.difficulty = difficulty;
+  selectDifficulty(difficulty: string): void {
+    this.selectedDifficulty.set(difficulty);
+    console.log("Selected Difficulty: ", this.selectedDifficulty());
   }
 
-  sendDifficulty() {
-    localStorage.setItem("difficulty", this.difficulty);
-    console.log("Difficulty successfully passed: ", this.difficulty);
+  onStart(): void {
+    if(this.selectedDifficulty()) {
+      this.startGame.emit(this.selectedDifficulty()!);
+    }else{
+      console.log("No difficulty selected.");
+      // You can add a visual cue here to tell the user to select a difficulty
+    }
   }
 }
