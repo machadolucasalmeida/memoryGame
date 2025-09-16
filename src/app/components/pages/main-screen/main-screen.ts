@@ -8,7 +8,7 @@ import { Component, signal, ChangeDetectionStrategy, Output, EventEmitter } from
 })
 export class MainScreen {
   selectedDifficulty = signal<string | null>(null);
-  @Output() startGame = new EventEmitter<string>();
+  @Output() readonly startGame = new EventEmitter<string>();
 
   selectDifficulty(difficulty: string): void {
     this.selectedDifficulty.set(difficulty);

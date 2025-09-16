@@ -8,8 +8,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './game-screen.scss'
 })
 export class GameScreen {
-  @Input() difficulty!: string;
-  @Output() backToMain = new EventEmitter<void>();
+  @Input() readonly difficulty!: string;
+  @Output() readonly backToMain = new EventEmitter<void>();
 
   cards = signal<{ id: number; value: string; flipped: boolean; matched: boolean }[]>([])
   flippedCards = signal<number[]>([]);

@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main>
     @if (gameStarted()) {
-    <app-game-screen [difficulty]="selectedDifficulty() ?? ''" (backToMain)="onBackToMain()">
+    <app-game-screen (backToMain)="onBackToMain()">
     </app-game-screen>
     } @else {
     <app-main-screen (startGame)="onStartGame($event)"></app-main-screen>
