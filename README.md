@@ -1,59 +1,66 @@
-# MemoryGame
+🧠 Memory Game: A Halloween-Themed Challenge 🎃
+This is a memory game built as a portfolio project to showcase front-end development skills using Angular, HTML, and SCSS. Players can choose from three difficulty levels to test their memory by matching pairs of spooky creatures.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+✨ Features
+Interactive Gameplay: Choose between Easy (4x3), Medium (4x4), and Hard (6x4) grid sizes.
 
-## Development server
+Dynamic UI: The game board and difficulty cards are dynamically rendered based on the selected options.
 
-To start a local development server, run:
+Responsive Design: The layout adapts to various screen sizes and orientations (mobile, tablet, and desktop) for a seamless user experience.
 
-```bash
+Custom Styling: A unique, Halloween-themed design created from scratch using SCSS.
+
+Smooth Animations: CSS transitions and animations bring the game to life, providing satisfying visual feedback.
+
+🚀 Technologies Used
+Angular CLI: Used for project scaffolding and building.
+
+Angular: The core framework for the application's structure and logic.
+
+TypeScript: Ensures type safety and cleaner code.
+
+SCSS: Provides a powerful way to write organized and maintainable CSS.
+
+HTML5: Semantic markup for a well-structured application.
+
+📦 Installation and Setup
+To get a copy of this project up and running on your local machine, follow these steps.
+
+Prerequisites
+
+Node.js (LTS version)
+
+Angular CLI (npm install -g @angular/cli)
+
+Steps
+
+Clone the repository:
+
+Bash
+
+git clone https://github.com/your-username/memory-game.git
+Navigate to the project directory:
+
+Bash
+
+cd memory-game
+Install the dependencies:
+
+Bash
+
+npm install
+Run the application:
+
+Bash
+
 ng serve
-```
+Open your browser and navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+🖼️ Screenshots
+You can add screenshots or a GIF here to visually showcase the game's interface and features
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+✍️ Author
+Lucas Machado - GitHub | LinkedIn
